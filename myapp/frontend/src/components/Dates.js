@@ -1,32 +1,30 @@
 import React from "react";
 
-import DatesList from "../DatesList";
 
 export default class Dates extends React.Component {
+
+	constructor(props) {
+    super(props);
+
+    this.state={
+      sport: null,
+      numPeople: null,
+      place:null,
+      comment:null,
+      invite:null
+    };
+  }
+
+
   render() {
-    const { query } = this.props.location;
-    const { params } = this.props;
-    const { article } = params;
-    const { date, filter } = query;
-
-    const Articles = [
-      "Some Article",
-      "Some Other Article",
-      "Yet Another Article",
-      "Still More",
-      "Fake Article",
-      "Partial Article",
-      "American Article",
-      "Mexican Article",
-    ].map((title, i) => <DatesList key={i} title={title}/> );
-
-    console.log(Articles)
-    return (
-      <div>
-        <h1>Dates</h1>
-        article: {article}, date: {date}, filter: {filter}
-        <div class="row">{Articles}</div>
-      </div>
-    );
+  	return (
+  	<div>
+  		<p>Sport: {this.props.sport}</p>
+  		<p>numPeople: {this.props.numPeople}</p>
+  		<p>place: {this.props.place}</p>
+  		<p>comment: {this.props.comment}</p>
+  		<p>invite: {this.props.invite}</p>
+    </div>
+   );
   }
 }
