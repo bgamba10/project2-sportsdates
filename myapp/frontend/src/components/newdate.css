@@ -1,0 +1,20 @@
+.everything{
+	background-color: #363636;
+}
+
+.everything h1{
+	color: #44d9e6;
+	padding-top: 10px;
+	font-family: 'Bree Serif', serif;
+}
+
+.everything input{
+/*	width: 50%; */
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #fff;
+}

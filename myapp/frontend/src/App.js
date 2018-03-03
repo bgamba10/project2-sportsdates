@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import DatesList from "./DatesList";
-import NewDate from "./NatesDate";
+import NewDate from "./components/NewDate";
 
 class App extends Component {
   render() {
