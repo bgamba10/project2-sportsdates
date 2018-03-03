@@ -1,6 +1,6 @@
 import React from "react";
 
-import Article from "../DatesList";
+import DatesList from "../DatesList";
 
 export default class Dates extends React.Component {
   render() {
@@ -18,11 +18,12 @@ export default class Dates extends React.Component {
       "Partial Article",
       "American Article",
       "Mexican Article",
-    ].map((title, i) => <Article key={i} title={title}/> );
+    ].map((title, i) => <DatesList key={i} title={title}/> );
 
+    console.log(Articles)
     return (
       <div>
-        <h1>Archives</h1>
+        <h1>Dates</h1>
         article: {article}, date: {date}, filter: {filter}
         <div class="row">{Articles}</div>
       </div>
