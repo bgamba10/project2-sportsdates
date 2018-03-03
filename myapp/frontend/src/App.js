@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import DatesList from "./DatesList";
+import NewDate from "./NatesDate";
 
 class App extends Component {
   render() {
@@ -11,6 +12,8 @@ class App extends Component {
         </header>
         <DatesList>
         </DatesList>
+        <NewDate>
+        </NewDate>
       </div>
     );
   }
