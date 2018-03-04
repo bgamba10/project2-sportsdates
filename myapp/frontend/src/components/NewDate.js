@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import request from "../../node_modules/superagent/superagent";
 import './newdate.css';
 import './css/main.css';
 import './css/util.css';
@@ -6,33 +7,33 @@ import './css/util.css';
 
 class NewDate extends Component {
 
- constructor(props) {
-  super(props);
+   constructor(props) {
+      super(props);
 
 
-  this.state={
-    sports:[
-    'Tennis',
-    'Basket'
-    ],
-    numP: [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30
-    ],
-    vSport:'',
-    vNumPeople:'',
-    vPlace:'',
-    vComments:'',
-    vInvite:''
+      this.state={
+        sports:[
+        'Tennis',
+        'Basket'
+        ],
+        numP: [
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30
+        ],
+        vSport:'',
+        vNumPeople:'',
+        vPlace:'',
+        vComments:'',
+        vInvite:''
 
-};
+    };
 
-this.handleChangeSport = this.handleChangeSport.bind(this);
-this.handleChangeNumPeople = this.handleChangeNumPeople.bind(this);
-this.handleChangePlace = this.handleChangePlace.bind(this);
-this.handleChangeComments = this.handleChangeComments.bind(this);
-this.handleChangeInvite = this.handleChangeInvite.bind(this);
-this.handleSubmit = this.handleSubmit.bind(this);
-console.log(this.props);
+    this.handleChangeSport = this.handleChangeSport.bind(this);
+    this.handleChangeNumPeople = this.handleChangeNumPeople.bind(this);
+    this.handleChangePlace = this.handleChangePlace.bind(this);
+    this.handleChangeComments = this.handleChangeComments.bind(this);
+    this.handleChangeInvite = this.handleChangeInvite.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    console.log(this.props);
 
 }   
 
@@ -60,6 +61,19 @@ handleChangeInvite(event) {
 handleSubmit(event) {
     alert('A Date was submitted: ' + this.state.vSport);
     event.preventDefault();
+
+    request
+    .post('/api')
+    .set('Content-Type', 'application/x-www-form-urlencoded')
+    .send({ sport: this.state.vSport, 
+            numPeople: this.state.vNumPeople,
+            place: this.state.vPlace,
+            comment: this.state.vComments,
+            invite: this.state.vInvite
+     })
+    .end(function(err, res){
+        console.log(res.text);
+    });
 }
 
 

@@ -199,7 +199,7 @@ iframe {
   background-color: #363636;
   font-family: Poppins-Regular;
   font-size: 15px;
-  color: #555555;
+  color: #DDDCE3;
   line-height: 1.2;
 }
 
@@ -228,10 +228,10 @@ iframe {
   transition: all 0.4s;
 
   background: rgba(219,21,99,1);
-  background: -webkit-linear-gradient(45deg, #d5007d, #e53935);
-  background: -o-linear-gradient(45deg, #d5007d, #e53935);
-  background: -moz-linear-gradient(45deg, #d5007d, #e53935);
-  background: linear-gradient(45deg, #d5007d, #e53935);
+  background: -webkit-linear-gradient(45deg, #2D9099, #44d9e6);
+  background: -o-linear-gradient(45deg, #2D9099, #44d9e6);
+  background: -moz-linear-gradient(45deg, #2D9099, #44d9e6);
+  background: linear-gradient(45deg, #2D9099, #44d9e6);
 }
 
 .focus-input2::after {
@@ -244,7 +244,7 @@ iframe {
 
   font-family: Poppins-Regular;
   font-size: 13px;
-  color: #999999;
+  color: #DDDCE3;
   line-height: 1.2;
 
   -webkit-transition: all 0.4s;
@@ -443,7 +443,7 @@ textarea.input2 + .focus-input2::after {
 .label-input100 {
   font-family: Poppins-Regular;
   font-size: 13px;
-  color: #666666;
+  color: #DDDCE3;
   line-height: 1.5;
   padding-left: 5px;
 }
