@@ -6,6 +6,7 @@ import Dates from "./components/Dates";
 class DatesList extends Component {
 
 
+
    constructor(props) {
     super(props);
 
@@ -39,9 +40,8 @@ class DatesList extends Component {
           </ul>
       </div>
 
-
     );
-}
+  }
 }
 export default DatesList;
 

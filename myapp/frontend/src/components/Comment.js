@@ -5,6 +5,9 @@ class Comment extends Component {
     return (
     	<div>
     		<h3>Comment</h3>
+    		<form >
+      <input class="form-group" type="text" name="name" placeholder="Any extra info. Example: 'Take a ball'" />
+      </form>
     	</div>
     );
   }
