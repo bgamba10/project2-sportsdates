@@ -20,7 +20,7 @@ gris 2   #b3b2b8 */
 }
 
 .everything input{
-/*	width: 50%; */
+	width: 50%; 
 }
 
 body {
@@ -29,3 +29,15 @@ body {
     line-height: 1.42857143;
     color: #fff;
 }
+
+.everything button {
+    background-color: #44d9e6; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
