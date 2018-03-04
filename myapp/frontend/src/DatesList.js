@@ -29,16 +29,16 @@ class DatesList extends Component {
 
 render() {
 
+    return (
+      <div className="App">
+          <h1 className="App-title">Available dates </h1>
+          <ul>
+            {this.state.dates.map((d,index) => {
+              return <Dates sport = {d.sport} numPeople = {d.numPeople} place = {d.place} comment = {d.comment} invite = {d.invite} key = {index} /> 
+            })}
+          </ul>
+      </div>
 
-  return (
-    <div className="App">
-    <h1 className="App-title">Available dates 😏</h1>
-    <ul>
-    {this.state.dates.map((d,index) => {
-      return <Dates sport = {d.sport} numPeople = {d.numPeople} place = {d.place} comment = {d.comment} invite = {d.invite} key = {index} /> 
-    })}
-    </ul>
-    </div>
 
     );
 }
