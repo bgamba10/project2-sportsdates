@@ -3,10 +3,14 @@ import './App.css';
 import DatesList from "./DatesList";
 import NewDate from "./components/NewDate";
 import Profile from "./components/Profile";
+import GoogleLogin from 'react-google-login';
 
 
 class App extends Component {
 
+
+
+ 
   onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
   console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
@@ -26,7 +30,11 @@ render() {
         <h1 className="App-title col-sm-9">Welcome to Sport's Dates</h1>
       </div>
       <div id="gsi" className="col-sm-3">
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <GoogleLogin
+    clientId="606940674430-a0platgl7ek3ml6k43bvhatbrijqte35.apps.googleusercontent.com"
+    buttonText="Login"
+    
+  />
       </div>
     </div>
     </header>

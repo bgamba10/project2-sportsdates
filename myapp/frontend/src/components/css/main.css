@@ -3,27 +3,6 @@
 
 
 /*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
-
-@font-face {
-  font-family: Poppins-Regular;
-  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
-}
-
-@font-face {
-  font-family: Poppins-Medium;
-  src: url('../fonts/poppins/Poppins-Medium.ttf'); 
-}
-
-@font-face {
-  font-family: Poppins-Bold;
-  src: url('../fonts/poppins/Poppins-Bold.ttf'); 
-}
-
-
-
-
-/*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 
 * {
@@ -34,12 +13,13 @@
 
 body, html {
 	height: 100%;
-	font-family: Poppins-Regular, sans-serif;
+	font-family: 'Poppins', sans-serif;
+
 }
 
 /*---------------------------------------------*/
 a {
-	font-family: Poppins-Regular;
+	font-family: 'Poppins', sans-serif;
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -65,7 +45,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 p {
-	font-family: Poppins-Regular;
+	font-family: 'Poppins', sans-serif;
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -173,7 +153,8 @@ iframe {
 
 .contact2-form-title {
   display: block;
-  font-family: Poppins-Bold;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
   font-size: 39px;
   color: #333333;
   line-height: 1.2;
@@ -197,7 +178,7 @@ iframe {
   display: block;
   width: 100%;
   background-color: #363636;
-  font-family: Poppins-Regular;
+  font-family: 'Poppins', sans-serif;
   font-size: 15px;
   color: #DDDCE3;
   line-height: 1.2;
@@ -242,7 +223,7 @@ iframe {
   top: 0px;
   left: 0;
 
-  font-family: Poppins-Regular;
+  font-family: 'Poppins', sans-serif;
   font-size: 13px;
   color: #DDDCE3;
   line-height: 1.2;
@@ -346,7 +327,8 @@ textarea.input2 + .focus-input2::after {
 
  
 
-  font-family: Poppins-Medium;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
   font-size: 16px;
   color: #fff;
   line-height: 1.2;
@@ -393,7 +375,7 @@ textarea.input2 + .focus-input2::after {
   right: 0px;
   pointer-events: none;
 
-  font-family: Poppins-Regular;
+  font-family: 'Poppins', sans-serif;
   color: #c80000;
   font-size: 13px;
   line-height: 1.4;
@@ -410,7 +392,7 @@ textarea.input2 + .focus-input2::after {
 
 .alert-validate::after {
   content: "\f12a";
-  font-family: FontAwesome;
+  font-family: 'Poppins', sans-serif;
   display: block;
   position: absolute;
   color: #c80000;
@@ -441,7 +423,7 @@ textarea.input2 + .focus-input2::after {
 }
 
 .label-input100 {
-  font-family: Poppins-Regular;
+  ffont-family: 'Poppins', sans-serif;
   font-size: 13px;
   color: #DDDCE3;
   line-height: 1.5;
@@ -452,7 +434,8 @@ textarea.input2 + .focus-input2::after {
   display: block;
   width: 100%;
   background: transparent;
-  font-family: Poppins-Medium;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
   font-size: 18px;
   color: #333333;
   line-height: 1.2;
@@ -535,7 +518,8 @@ textarea.input100 {
 /*------------------------------------------------------------------
 [ in select ]*/
 .select2-container .select2-selection--single .select2-selection__rendered {
-  font-family: Poppins-Medium;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
   font-size: 18px;
   color: #333333;
   line-height: 1.2;
@@ -623,7 +607,7 @@ textarea.input100 {
 }
 
 .select2-results__options {
-  font-family: Poppins-Regular;
+  font-family: 'Poppins', sans-serif;
   font-size: 15px;
   color: #333333;
   line-height: 1.2;
@@ -632,7 +616,7 @@ textarea.input100 {
 .select2-search--dropdown .select2-search__field {
   border: 1px solid #aaa;
   outline: none;
-  font-family: Poppins-Regular;
+  font-family: 'Poppins', sans-serif;
   font-size: 15px;
   color: #333333;
   line-height: 1.2;
