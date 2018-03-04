@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import DatesList from "./DatesList";
 import NewDate from "./components/NewDate";
+import Profile from "./components/Profile";
 
 
 class App extends Component {
@@ -14,6 +15,8 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome SportsDates </h1>
         </header>
+        <Profile>
+        </Profile>
         <DatesList>
         </DatesList>
         <NewDate>
