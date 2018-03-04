@@ -20,10 +20,10 @@ export default class Dates extends React.Component {
   	return (
   	<div>
   		<p>Sport: {this.props.sport}</p>
-  		<p>numPeople: {this.props.numPeople}</p>
-  		<p>place: {this.props.place}</p>
-  		<p>comment: {this.props.comment}</p>
-  		<p>invite: {this.props.invite}</p>
+  		<p>Number of people: {this.props.numPeople}</p>
+  		<p>Place: {this.props.place}</p>
+  		<p>Comment: {this.props.comment}</p>
+  		<p>Invite: {this.props.invite}</p>
     </div>
    );
   }
