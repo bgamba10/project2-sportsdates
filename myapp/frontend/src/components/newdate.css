@@ -19,9 +19,14 @@ gris 2   #b3b2b8 */
 	color: #fff;
 }
 
-.everything input{
-	width: 50%; 
+.everything label{
+	color: #fff;
 }
+
+.everything select {
+    color: #363636;
+}
+
 
 body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;

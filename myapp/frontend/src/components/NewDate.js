@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import './newdate.css';
-import Sport from "./Sport";
-import NumPeople from "./NumPeople";
-import Place from "./Place";
-import Comment from "./Comment";
-import Invite from "./Invite";
+import './css/main.css';
+import './css/util.css';
+
 
 class NewDate extends Component {
 
@@ -18,30 +16,115 @@ class NewDate extends Component {
     'Basket'
     ],
     numP: [
-        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30
-    ]
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30
+    ],
+    vSport:'',
+    vNumPeople:'',
+    vPlace:'',
+    vComments:'',
+    vInvite:''
+
 };
 
+this.handleChangeSport = this.handleChangeSport.bind(this);
+this.handleChangeNumPeople = this.handleChangeNumPeople.bind(this);
+this.handleChangePlace = this.handleChangePlace.bind(this);
+this.handleChangeComments = this.handleChangeComments.bind(this);
+this.handleChangeInvite = this.handleChangeInvite.bind(this);
+this.handleSubmit = this.handleSubmit.bind(this);
+console.log(this.props);
 
+}   
+
+
+handleChangeSport(event) {
+    this.setState({vSport: event.target.value});
 }
 
+handleChangeNumPeople(event) {
+    this.setState({vNumPeople: event.target.value});
+}
+
+handleChangePlace(event) {
+    this.setState({vPlace: event.target.value});
+}
+
+handleChangeComments(event) {
+    this.setState({vComments: event.target.value});
+}
+
+handleChangeInvite(event) {
+    this.setState({vInvite: event.target.value});
+}
+
+handleSubmit(event) {
+    alert('A Date was submitted: ' + this.state.vSport);
+    event.preventDefault();
+}
 
 
 render() {
     return (
     	<div className="everything">
-      <h1>Create a new Sport's Date</h1>
+        <div className="container-contact2">
 
-      
-      <Sport sports={this.state.sports}></Sport> 
+        <h1>Create a new Sport's Date</h1>
 
-      <NumPeople numP={this.state.numP}></NumPeople>
-      <Place></Place>
-      <Comment></Comment>
-      <Invite></Invite>
-      <button type="submit">Get this game started!</button>
-      </div>
-      );
+        <form onSubmit={this.handleSubmit} className="contact2-form validate-form" method="POST" action="/api">
+        <div className="wrap-input100 input100-select">
+        <span className="label-input100">Select which sport you want to play!</span>
+        <div>  
+        <select name="Sport" value={this.state.value} onChange={this.handleChangeSport}>
+        {this.state.sports.map((d,index) => {
+            return <option value={d} key = {index}> {d} </option>
+        })}
+        </select>
+        </div>
+        <span className="focus-input100"></span>
+        </div>
+        <br/>
+
+        <div className="wrap-input100 input100-select">
+        <span className="label-input100">Number of People</span>
+        <div> 
+        <select className="selection-2" name="NumPeople" value={this.state.value} onChange={this.handleChangeNumPeople} >
+        {this.state.numP.map((d,index) => {
+            return <option value={d} key = {index}> {d} </option>
+        })}
+        </select>
+        </div>
+        <span className="focus-input100"></span>
+        </div>
+
+        <br/>
+        <div className="wrap-input2 validate-input">
+        <input className="input2" type="text" value={this.state.value} onChange={this.handleChangePlace}/> 
+        <span className="focus-input2" data-placeholder="Where de you want to play?"></span>
+        </div>
+        <br/>
+        <div className="wrap-input2 validate-input">
+        <input className="input2" type="text" value={this.state.value} onChange={this.handleChangeComments} />
+        <span className="focus-input2" data-placeholder="Comment"></span>
+        </div>
+        <br/>
+        <div className="wrap-input2 validate-input" data-validate = "Valid email is required: ex@abc.xyz">  
+        <input className="input2" type="text" value={this.state.value} onChange={this.handleChangeInvite} />
+        <span className="focus-input2" data-placeholder="Type your friend's email"></span>
+        </div>
+        <br/>
+        <div className="container-contact2-form-btn">
+        <div className="wrap-contact2-form-btn">
+        <div className="contact2-form-bgbtn"></div>
+        <button className="contact2-form-btn" type="submit" value="submit">
+        Get your game started!
+        </button>
+        </div>
+        </div>
+        </form>
+        </div>
+        </div>
+
+        );
 }
 }
 
