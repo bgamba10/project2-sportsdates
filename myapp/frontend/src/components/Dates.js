@@ -11,8 +11,14 @@ export default class Dates extends React.Component {
       numPeople: null,
       place:null,
       comment:null,
-      invite:null
+      invite:null, 
+      registered:[]
     };
+  }
+
+  register(event)
+  {
+    console.log("Registradose"); 
   }
 
 
@@ -24,6 +30,13 @@ export default class Dates extends React.Component {
   		<p>Place: {this.props.place}</p>
   		<p>Comment: {this.props.comment}</p>
   		<p>Invite: {this.props.invite}</p>
+      <p>The people registered are:  </p> 
+      <p>
+            {this.state.registered.map((d,index) => {
+              return <span> {d} </span>
+              })}
+      </p>
+      <button onClick={this.register}>Register here!</button>
     </div>
    );
   }
