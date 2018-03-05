@@ -6,8 +6,7 @@ If you want to run in just follow this simple steps:
 `npm install`
 Go to the ./myapp/frontend folder and run 
 `cd frontend`
-`yarn install `
-or
+`yarn install`
 `yarn build`
 
 Then go back to /myapp folder and run
