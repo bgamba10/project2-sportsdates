@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #363636;
 }
 
 .App-logo {
@@ -9,13 +10,13 @@
 
 .App-header {
   background-color: #44d9e6;
-  height: 200px;
+  height: 100px;
   padding: 20px;
   color: white;
 }
 
 .App-title {
-  font-size: 4em;
+  font-size: 3.5em;
   color: #363636;
   font-family: 'Bree Serif', serif;
   margin: 0px;
@@ -26,7 +27,23 @@ padding: 10px;
 
 }
 
+.h1 img{
+  size: 20%
+}
+
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+@media (max-width: 770px) {
+
+.App-header {
+  background-color: #44d9e6;
+  height: 200px;
+  padding: 20px;
+  color: white;
+}
+
 }

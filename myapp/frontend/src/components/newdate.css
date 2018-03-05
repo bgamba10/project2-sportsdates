@@ -12,6 +12,7 @@ gris 2   #b3b2b8 */
 .everything h1{
 	color: #44d9e6;
 	padding-top: 10px;
+    padding-bottom: 10px;
 	font-family: 'Bree Serif', serif;
 }
 
@@ -21,6 +22,10 @@ gris 2   #b3b2b8 */
 
 .everything label{
 	color: #fff;
+}
+
+.everything span{
+    color: #fff;
 }
 
 .everything select {
