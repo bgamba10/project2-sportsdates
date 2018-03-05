@@ -28,6 +28,7 @@ export default class Dates extends React.Component {
   {
     console.log("Registradose"); 
     console.log(this.props);
+    this.props.reg.push("nuevo")
 
     request
     .post('/api')
@@ -39,11 +40,17 @@ export default class Dates extends React.Component {
         place: this.props.place,
         comment: this.props.comment,
         invite: this.props.invite,
-        reg: this.props.reg.push("nuevo")
+        reg: this.props.reg
     })
     .end(function(err, res){
         console.log(res.text);
     });
+
+   request
+       .del('/api')
+       .send({ id: id })
+       .set('Accept', 'application/json')
+       .end(function(err, res){});
   }
 
 

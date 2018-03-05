@@ -11,7 +11,7 @@ class DatesList extends Component {
     super(props);
 
     this.state={
-      dates:{}
+      dates:[]
     };
   }
 
@@ -22,7 +22,9 @@ class DatesList extends Component {
         return res.json();
       })
       .then((info) => {
-        me.setState({dates:info});
+        {console.log("la info:"+info)}
+        me.setState({dates : info});
+        
       })
       .catch((err) => console.log(err) );
     
@@ -33,10 +35,9 @@ class DatesList extends Component {
     return (
       <div className="everything">
           <h1 >Available dates</h1>
-          {console.log(this.state.dates)}
           <ul>
+            {console.log(this.state)}
             {this.state.dates.map((d,index) => {
-              {console.log("hola")}
               return <Dates _id = {d._id} sport = {d.sport} numPeople = {d.numPeople} place = {d.place} comment = {d.comment} invite = {d.invite} reg = {d.reg} key = {index} /> 
             })}
           </ul>
