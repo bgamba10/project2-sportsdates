@@ -101,8 +101,8 @@ render() {
         <h1>Create a new Sport's Date</h1>
 
         <form onSubmit={this.handleSubmit} className="contact2-form validate-form" method="POST" action="/api">
-        <div className="wrap-input100 input100-select">
-        <span className="label-input100">Select which sport you want to play!</span>
+        <div className="wrap-input2 input100-select">
+        <span className="input2">Select which sport you want to play!</span>
         <div>  
         <select name="Sport" value={this.state.value} onChange={this.handleChangeSport}>
         {this.state.sports.map((d,index) => {
@@ -114,8 +114,8 @@ render() {
         </div>
         <br/>
 
-        <div className="wrap-input100 input100-select">
-        <span className="label-input100">Number of People</span>
+        <div className="wrap-input2 input100-select">
+        <span className="input2">Number of People</span>
         <div> 
         <select className="selection-2" name="NumPeople" value={this.state.value} onChange={this.handleChangeNumPeople} >
         {this.state.numP.map((d,index) => {
