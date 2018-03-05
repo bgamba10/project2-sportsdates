@@ -17,7 +17,7 @@ export default class Dates extends React.Component {
       place:null,
       comment:null,
       invite:null,
-      reg:['hola'],
+      reg:[]
       
     };
 

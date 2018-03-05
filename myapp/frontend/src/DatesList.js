@@ -11,7 +11,7 @@ class DatesList extends Component {
     super(props);
 
     this.state={
-      dates:[]
+      dates:{}
     };
   }
 
@@ -36,7 +36,8 @@ class DatesList extends Component {
           {console.log(this.state.dates)}
           <ul>
             {this.state.dates.map((d,index) => {
-              return <Dates _id = {d._id} sport = {d.sport} numPeople = {d.numPeople} place = {d.place} comment = {d.comment} invite = {d.invite}  key = {index} /> 
+              {console.log("hola")}
+              return <Dates _id = {d._id} sport = {d.sport} numPeople = {d.numPeople} place = {d.place} comment = {d.comment} invite = {d.invite} reg = {d.reg} key = {index} /> 
             })}
           </ul>
       </div>
