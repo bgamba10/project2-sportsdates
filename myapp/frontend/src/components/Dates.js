@@ -9,9 +9,7 @@ export default class Dates extends React.Component {
 
     this.state={
   
-       _id: {
-        "$oid": null
-      },
+       _id:null,
       sport: null,
       numPeople: null,
       place:null,
@@ -28,13 +26,13 @@ export default class Dates extends React.Component {
   {
     console.log("Registradose"); 
     console.log(this.props);
-    this.props.reg.push("nuevo")
+    this.props.reg.push("b.gamba10@uniandes.edu.co");
 
     request
     .post('/api')
     .set('Content-Type', 'application/x-www-form-urlencoded')
     .send({ 
-        _id: this.props.id,
+
         sport: this.props.sport, 
         numPeople: this.props.numPeople,
         place: this.props.place,
@@ -47,9 +45,8 @@ export default class Dates extends React.Component {
     });
 
    request
-       .del('/api')
+       .del('/api/'+this.props._id)
        .send({ id: this.props.id})
-       .set('Accept', 'application/json')
        .end(function(err, res){});
   }
 
@@ -65,7 +62,6 @@ export default class Dates extends React.Component {
   		<p><span>Comment: </span>{this.props.comment}</p>
   		<p><span>Invite: </span>{this.props.invite}</p>
       <p><span>The people registered are: </span> </p> 
-      {console.log(this.props)}
       <p>
             {this.props.reg.map((d,index) => {
               return <span> {d} </span>

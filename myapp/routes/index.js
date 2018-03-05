@@ -3,6 +3,7 @@ var router = express.Router();
 const MongoClient = require("mongodb").MongoClient;
 const assert = require("assert");
 var bodyParser = require('body-parser')
+var ObjectId = require('mongodb').ObjectID;
 
 const url = "mongodb://nicolas:nicolas@ds243325.mlab.com:43325/nicolasdatabase";
 
@@ -36,9 +37,9 @@ const insertDocuments = function(db,d,callback) {
 const removeDocument = function(db, id,callback) {
   // Get the documents collection
   const collection = db.collection('sportsdates');
+  console.log(id);
   // Delete document where a is 3
-  collection.deleteOne({ id : id }, function(err, result) {
-
+  collection.remove({"_id": ObjectId(id)}, function(err, result) {
     callback(result);
 });    
 }
@@ -47,8 +48,6 @@ const removeDocument = function(db, id,callback) {
 function getFollowers(callback) {
 
   // Database Name
-  
-
   // Use connect method to connect to the server
   MongoClient.connect(url, function(err, client) {
     assert.equal(null, err);
@@ -83,7 +82,7 @@ MongoClient.connect(url, function(err, client) {
 
   const db = client.db(dbName);
 
-      removeDocument(db, function() {
+      removeDocument(db, id,function() {
         client.close();
         callback();
 });
@@ -102,9 +101,9 @@ router.post("/", function(req, res) {
     postDate(body, () => res.send('Todo en orden'));
 });
 
-router.delete('/', function (req, res) {
+router.delete("/:query", function (req, res) {
     var body = req.body
-    delDate(body, () => res.send('Todo en orden'));
+    delDate(req.params.query, () => res.send('Todo en orden'));
 });
 
 module.exports = router;

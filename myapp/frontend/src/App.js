@@ -3,12 +3,23 @@ import './App.css';
 import DatesList from "./DatesList";
 import NewDate from "./components/NewDate";
 import Profile from "./components/Profile";
+import FacebookLogin from 'react-facebook-login';
 
 
 
 class App extends Component {
 
- 
+  constructor(props) {
+    super(props);
+
+    //this.onSignIn = this.onSignIn.bind(this);
+
+  }
+
+
+
+
+
 /*
 onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
@@ -24,6 +35,8 @@ signOut() {
     console.log('User signed out.');
   });
 }*/
+
+/*
 
 HandleGoogleApiLibrary() {
   // Load "client" & "auth2" libraries
@@ -50,7 +63,17 @@ HandleGoogleApiLibrary() {
     }
   });
 }
+*/
 
+/*
+onSignIn() {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+*/
 
 componentDidMount () {
   const script = document.createElement("script");
@@ -61,6 +84,8 @@ componentDidMount () {
   script.onreadystatechange="if (this.readyState === 'complete') this.onload()";
   document.body.appendChild(script);
 }
+
+
 
 /*
 gapi.load("auth2", function(){
@@ -87,7 +112,7 @@ render(
     <div id="gsi" className="col-sm-3">
 
 
-    <div class="g-signin2" data-onsuccess="onSignIn" responseType="code"></div><a href="#" onclick="signOut();">Sign out</a>
+    <div class="g-signin2"  responseType="code"></div><a href="#" onclick="signOut();">Sign out</a>
 
     
     </div>

@@ -77,6 +77,7 @@ handleChangeInvite(event) {
 handleSubmit(event) {
     alert('A Date was submitted: ' + this.state.vSport);
     event.preventDefault();
+    var reg = ['Invitados','aqui']; 
 
     request
     .post('/api')
@@ -85,7 +86,8 @@ handleSubmit(event) {
         numPeople: this.state.vNumPeople,
         place: this.state.vPlace,
         comment: this.state.vComments,
-        invite: this.state.vInvite
+        invite: this.state.vInvite,
+        reg:reg
     })
     .end(function(err, res){
         console.log(res.text);

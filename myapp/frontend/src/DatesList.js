@@ -22,7 +22,6 @@ class DatesList extends Component {
         return res.json();
       })
       .then((info) => {
-        {console.log("la info:"+info)}
         me.setState({dates : info});
         
       })
