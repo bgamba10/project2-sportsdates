@@ -48,7 +48,7 @@ export default class Dates extends React.Component {
 
    request
        .del('/api')
-       .send({ id: id })
+       .send({ id: this.props.id})
        .set('Accept', 'application/json')
        .end(function(err, res){});
   }

@@ -33,16 +33,14 @@ const insertDocuments = function(db,d,callback) {
 });
 }
 
-const removeDocument = function(db, callback) {
+const removeDocument = function(db, id,callback) {
   // Get the documents collection
-  const collection = db.collection('documents');
+  const collection = db.collection('sportsdates');
   // Delete document where a is 3
-  collection.deleteOne({ a : 3 }, function(err, result) {
-    assert.equal(err, null);
-    assert.equal(1, result.result.n);
-    console.log("Removed the document with the field a equal to 3");
+  collection.deleteOne({ id : id }, function(err, result) {
+
     callback(result);
-  });    
+});    
 }
 
 
@@ -77,6 +75,22 @@ MongoClient.connect(url, function(err, client) {
 });
 }
 
+function delDate(id,callback){
+// Use connect method to connect to the server
+MongoClient.connect(url, function(err, client) {
+  assert.equal(null, err);
+  console.log("Connected successfully to server");
+
+  const db = client.db(dbName);
+
+      removeDocument(db, function() {
+        client.close();
+        callback();
+});
+});
+}
+
+
 router.get("/", function(req, res) {
   getFollowers( 
     (followers) => res.send(followers) 
@@ -84,9 +98,13 @@ router.get("/", function(req, res) {
 });
 
 router.post("/", function(req, res) {
-var body = req.body
-postDate(body, () => res.send('Todo en orden'));
+    var body = req.body
+    postDate(body, () => res.send('Todo en orden'));
 });
 
+router.delete('/', function (req, res) {
+    var body = req.body
+    delDate(body, () => res.send('Todo en orden'));
+});
 
 module.exports = router;
