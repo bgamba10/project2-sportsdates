@@ -5,9 +5,11 @@ const assert = require("assert");
 var bodyParser = require('body-parser')
 var ObjectId = require('mongodb').ObjectID;
 
-const url = "mongodb://nicolas:nicolas@ds243325.mlab.com:43325/nicolasdatabase";
+//No se deben poner las contraseñas en texto plano, se deben crear variables de entorno para estos datos:
 
-const dbName = "nicolasdatabase";
+const url = process.env.MONGODB_URI;
+
+const dbName = process.env.DBNAME;
 
 const findDocuments = function(db, callback) {
   // Get the documents collection
@@ -49,6 +51,9 @@ function getFollowers(callback) {
 
   // Database Name
   // Use connect method to connect to the server
+  
+ //Esto es mala idea, crea una conexión a la base de datos por cada request, lo cual lo hace muyyyyy lento!!!
+  
   MongoClient.connect(url, function(err, client) {
     assert.equal(null, err);
     console.log("Connected successfully to server");
