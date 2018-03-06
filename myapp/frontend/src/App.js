@@ -16,64 +16,7 @@ class App extends Component {
 
   }
 
-
-
-
-
-/*
-onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-}
-
-signOut() {
-  var auth2 = gapi.auth2.getAuthInstance();
-  auth2.signOut().then(function () {
-    console.log('User signed out.');
-  });
-}*/
-
-/*
-
-HandleGoogleApiLibrary() {
-  // Load "client" & "auth2" libraries
-  let gapi;
-  gapi.load('client:auth2',  {
-    callback: function() {
-      // Initialize client & auth libraries
-      gapi.client.init({
-          clientId: '606940674430-a0platgl7ek3ml6k43bvhatbrijqte35.apps.googleusercontent.com',
-          scope: 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.me'
-      }).then(
-        function(success) {
-            // Libraries are initialized successfully
-            // You can now make API calls
-        }, 
-        function(error) {
-          // Error occurred
-          // console.log(error) to find the reason
-          }
-      );
-    },
-    onerror: function() {
-      // Failed to load libraries
-    }
-  });
-}
-*/
-
-/*
-onSignIn() {
-  var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-}
-*/
+//Tenían más de 50 lineas de código muerto que distrae la atención de su aplicación
 
 componentDidMount () {
   const script = document.createElement("script");
