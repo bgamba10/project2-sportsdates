@@ -28,6 +28,10 @@ class DatesList extends Component {
       .catch((err) => console.log(err) );
     
   }
+   
+   /* Considero que el uso de este componente junto con el de "Dates" es adecuado y muy bien implementado. 
+   Me parece muy bueno el diseño de "arquitectura manejado en la medida de obtencion de los datos para cada date.
+   Tal vez seria bueno un poco de diseño en el front, de manera que sea visualmente mas entendible.*/
 
   render() {
 
