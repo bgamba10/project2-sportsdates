@@ -99,7 +99,8 @@ render(
   ) {
 
 
-
+/*Aunque implementan de buena manera cada componente en este metodo, 
+seria bueno organizarlo para que sea un poco mas entendible el codigo como tal.*/
   return (
     <div className="App">
     <header className="App-header">
